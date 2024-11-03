@@ -10,11 +10,11 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "WISS Hospitals | Comprehensive Healthcare in Hyderabad",
+  title: "Windfall Hospitals | Comprehensive Healthcare in Hyderabad",
   description:
-    "Windfall International Super Speciality Hospitals (WISS) in Madhapur, Hyderabad offers world-class medical treatment with advanced facilities and compassionate care, specializing in mother & child care, cardiology, orthopedics, and emergency services.",
+    "Windfall International Super Speciality Hospitals (Windfall) in Madhapur, Hyderabad offers world-class medical treatment with advanced facilities and compassionate care, specializing in mother & child care, cardiology, orthopedics, and emergency services.",
   keywords: [
-    "WISS Hospitals",
+    "Windfall Hospitals",
     "Hyderabad healthcare",
     "cardiology",
     "orthopedics",
@@ -23,19 +23,19 @@ export const metadata: Metadata = {
     "Madhapur hospitals",
   ].join(", "),
   openGraph: {
-    title: "WISS Hospitals - Advanced Medical Care in Hyderabad",
+    title: "Windfall Hospitals - Advanced Medical Care in Hyderabad",
     description:
-      "Discover WISS Hospitals, offering specialized care in Hyderabad. Our hospital provides comprehensive healthcare services including cardiology, orthopedics, and emergency care.",
+      "Discover Windfall Hospitals, offering specialized care in Hyderabad. Our hospital provides comprehensive healthcare services including cardiology, orthopedics, and emergency care.",
     url: "https://yourwebsite.com",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "WISS Hospitals | Advanced Healthcare in Hyderabad",
+    title: "Windfall Hospitals | Advanced Healthcare in Hyderabad",
     description:
-      "WISS Hospitals in Madhapur offers specialized medical care. From cardiology to emergency services, experience top-notch healthcare in Hyderabad.",
-    site: "@wisshospital",
+      "Windfall Hospitals in Madhapur offers specialized medical care. From cardiology to emergency services, experience top-notch healthcare in Hyderabad.",
+    site: "@Windfallhospital",
   },
 };
 
@@ -54,9 +54,9 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Hospital",
-              name: "WISS Hospitals",
+              name: "Windfall Hospitals",
               description:
-                "Windfall International Super Speciality Hospitals (WISS) in Madhapur, Hyderabad.",
+                "Windfall International Super Speciality Hospitals (Windfall) in Madhapur, Hyderabad.",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Your Hospital Address Here",

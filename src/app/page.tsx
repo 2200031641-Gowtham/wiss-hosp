@@ -24,9 +24,9 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "WISS Hospitals - Your Health, Our Priority",
+  title: "Windfall Hospitals - Your Health, Our Priority",
   description:
-    "WISS Hospitals offers comprehensive medical services including emergency care, surgery, specialized clinics, and more. With over 100 beds, we provide top-quality healthcare in Hyderabad.",
+    "Windfall Hospitals offers comprehensive medical services including emergency care, surgery, specialized clinics, and more. With over 100 beds, we provide top-quality healthcare in Hyderabad.",
   keywords:
     "hospital, healthcare, emergency care, surgery, specialized clinics, Hyderabad",
 };
@@ -144,7 +144,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex flex-col">
-              <h2 className="text-3xl font-bold mb-2">WISS Hospital</h2>
+              <h2 className="text-3xl font-bold mb-2">Windfall Hospital</h2>
               <p className="text-lg italic">Opening Soon</p>
             </div>
             <div>
@@ -190,7 +190,7 @@ export default function HomePage() {
             </nav>
           </div>
           <div className="mt-8 border-t border-white pt-4 text-center text-sm">
-            <p>© 2024 WISS Hospital. All rights reserved.</p>
+            <p>© 2024 Windfall Hospital. All rights reserved.</p>
           </div>
         </div>
       </footer>

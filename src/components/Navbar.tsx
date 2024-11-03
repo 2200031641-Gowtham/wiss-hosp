@@ -48,9 +48,9 @@ export default function Navbar() {
             +
           </span>
           <span className="text-xl font-semibold text-[#E84B1C]">
-            WISS Hospitals
+            Windfall Hospitals
           </span>
-          <span className="sr-only">WISS Hospitals</span>
+          <span className="sr-only">Windfall Hospitals</span>
         </Link>
 
         <nav className="hidden md:flex md:gap-6">

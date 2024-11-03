@@ -24,7 +24,7 @@ const HeroSection = forwardRef<HTMLDivElement, HeroSectionProps>(
               <span className="block text-[#E84B1C]">Our Priority</span>
             </h1>
             <p className="mb-10 text-lg text-gray-600 md:text-xl">
-              At WISS Hospitals, we are dedicated to providing world-class
+              At Windfall Hospitals, we are dedicated to providing world-class
               healthcare with a focus on super specialty services. Our
               state-of-the-art facilities and expert medical professionals
               ensure comprehensive care for you and your loved ones.

@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Phone } from "lucide-react";
+import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -40,50 +41,79 @@ export default function Navbar() {
     setIsOpen(false);
   };
 
+  const navItemVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-white shadow-md">
+    <motion.header
+      className="sticky top-0 z-50 w-full bg-white shadow-md"
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="#hero" className="flex items-center space-x-2">
-          <span className="text-2xl text-[#E84B1C]" aria-hidden="true">
-            +
-          </span>
-          <span className="text-xl font-semibold text-[#E84B1C]">
-            Windfall Hospitals
-          </span>
-          <span className="sr-only">Windfall Hospitals</span>
-        </Link>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Link href="#hero" className="flex items-center space-x-2">
+            <span className="text-2xl text-[#E84B1C]" aria-hidden="true">
+              +
+            </span>
+            <span className="text-xl font-semibold text-[#E84B1C]">
+              Windfall Hospitals
+            </span>
+            <span className="sr-only">Windfall Hospitals</span>
+          </Link>
+        </motion.div>
 
         <nav className="hidden md:flex md:gap-6">
-          {navItems.map((item) => (
-            <Link
+          {navItems.map((item, index) => (
+            <motion.div
               key={item.href}
-              href={item.href}
-              onClick={(e) => scrollToSection(e, item.href)}
-              className={`
-                text-md font-medium transition-colors hover:text-[#E84B1C]
-                ${
-                  isActive(item.href)
-                    ? "text-[#E84B1C] font-bold"
-                    : "text-gray-600"
-                }
-              `}
+              variants={navItemVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: index * 0.1 }}
             >
-              {item.label}
-            </Link>
+              <Link
+                href={item.href}
+                onClick={(e) => scrollToSection(e, item.href)}
+                className={`
+                  text-md font-medium transition-colors hover:text-[#E84B1C]
+                  ${
+                    isActive(item.href)
+                      ? "text-[#E84B1C] font-bold"
+                      : "text-gray-600"
+                  }
+                `}
+              >
+                {item.label}
+              </Link>
+            </motion.div>
           ))}
         </nav>
 
-        <Button
-          variant="ghost"
-          className="hidden items-center gap-2 rounded-full bg-[#E84B1C]/10 px-4 text-[#E84B1C] hover:bg-[#E84B1C]/20 hover:text-[#E84B1C] md:flex"
-          asChild
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          <Link href="tel: 72777 32777">
-            <Phone className="h-4 w-4" aria-hidden="true" />
-            <span> 72777 32777</span>
-            <span className="sr-only">Call us at 72777 32777</span>
-          </Link>
-        </Button>
+          <Button
+            variant="ghost"
+            className="hidden items-center gap-2 rounded-full bg-[#E84B1C]/10 px-4 text-[#E84B1C] hover:bg-[#E84B1C]/20 hover:text-[#E84B1C] md:flex"
+            asChild
+          >
+            <Link href="tel: 72777 32777">
+              <Phone className="h-4 w-4" aria-hidden="true" />
+              <span> 72777 32777</span>
+              <span className="sr-only">Call us at 72777 32777</span>
+            </Link>
+          </Button>
+        </motion.div>
 
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
@@ -111,31 +141,43 @@ export default function Navbar() {
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] sm:w-[400px]">
             <nav className="flex flex-col gap-4">
-              {navItems.map((item) => (
-                <Link
+              {navItems.map((item, index) => (
+                <motion.div
                   key={item.href}
-                  href={item.href}
-                  className={`
-                    text-lg font-medium hover:text-[#E84B1C]
-                    ${isActive(item.href) ? "text-[#E84B1C] font-bold" : ""}
-                  `}
-                  onClick={(e) => scrollToSection(e, item.href)}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
                 >
-                  {item.label}
-                </Link>
+                  <Link
+                    href={item.href}
+                    className={`
+                      text-lg font-medium hover:text-[#E84B1C]
+                      ${isActive(item.href) ? "text-[#E84B1C] font-bold" : ""}
+                    `}
+                    onClick={(e) => scrollToSection(e, item.href)}
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
               ))}
-              <Link
-                href="tel: 72777 32777"
-                className="flex items-center gap-2 text-lg font-medium text-[#E84B1C]"
-                onClick={() => setIsOpen(false)}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navItems.length * 0.1 }}
               >
-                <Phone className="h-4 w-4" aria-hidden="true" />
-                <span> 72777 32777</span>
-              </Link>
+                <Link
+                  href="tel: 72777 32777"
+                  className="flex items-center gap-2 text-lg font-medium text-[#E84B1C]"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Phone className="h-4 w-4" aria-hidden="true" />
+                  <span> 72777 32777</span>
+                </Link>
+              </motion.div>
             </nav>
           </SheetContent>
         </Sheet>
       </div>
-    </header>
+    </motion.header>
   );
 }

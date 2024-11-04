@@ -1,6 +1,5 @@
 "use client";
 
-import { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -12,6 +11,7 @@ import {
   Activity,
   Thermometer,
   UserCheck,
+  MapPin,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -144,11 +144,11 @@ export default function HomePage() {
           <DoctorsTeam />
         </section>
 
-        <section id="gallery" className="py-20">
+        <section id="gallery" className=" bg-[#fff0f5]">
           <GallerySection />
         </section>
 
-        <section id="contact" className="py-20">
+        <section id="contact" className="py-20 bg-[#fff0f5]">
           <ContactSection />
         </section>
       </main>
@@ -180,6 +180,16 @@ export default function HomePage() {
                     className="hover:underline"
                   >
                     windfallhospitals@gmail.com
+                  </a>
+                </p>
+                <p>
+                  Directions:{" "}
+                  <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=17.4506053924561,78.3916702270508"
+                    target="_blank"
+                    className="hover:underline"
+                  >
+                    Click here
                   </a>
                 </p>
               </address>

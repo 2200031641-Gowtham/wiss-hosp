@@ -17,6 +17,7 @@ import Navbar from "@/components/Navbar";
 import ContactSection from "@/components/Contact";
 import HeroSection from "@/components/Hero";
 import DoctorsTeam from "@/components/DoctorsTeam";
+import "./globals.css";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -43,7 +44,7 @@ export default function HomePage() {
 
         <section
           id="services"
-          className="py-20 bg-[#FFF0F5]" // Updated background color
+          className="bg-[#FFF0F5]" // Updated background color
           aria-labelledby="services-title"
         >
           <div className="container mx-auto px-4">
@@ -122,12 +123,12 @@ export default function HomePage() {
               ))}
             </div>
             <p className="text-center text-lg mt-10 text-gray-800">
-              This hospital has a capacity of over <strong>100 beds</strong>.
+              We have a capacity of over <strong>100 beds</strong>.
             </p>
           </div>
         </section>
 
-        <section id="doctors" className="py-20 bg-gray-100">
+        <section id="doctors" className=" bg-gray-100">
           <DoctorsTeam />
         </section>
 

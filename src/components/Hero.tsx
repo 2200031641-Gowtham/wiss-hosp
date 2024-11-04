@@ -1,22 +1,22 @@
 "use client";
+
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-// In HeroSection.tsx
-import React, { forwardRef } from "react";
+import React, { forwardRef, useState } from "react";
+import AppointmentModal from "@/components/AppointmentModal";
 
 interface HeroSectionProps {
-  // Define any props that your HeroSection may use
   title?: string;
   description?: string;
 }
 
 const HeroSection = forwardRef<HTMLDivElement, HeroSectionProps>(
   (props, ref) => {
-    return (
-      <section id="hero" ref={ref} className=" bg-[#FFF0F5]">
-        {/* Background Pattern */}
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
+    return (
+      <section id="hero" ref={ref} className="bg-[#FFF0F5]">
         <div className="container relative px-4 py-16 md:py-24">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
@@ -31,11 +31,11 @@ const HeroSection = forwardRef<HTMLDivElement, HeroSectionProps>(
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Button
-                asChild
                 className="bg-[#E84B1C] text-white hover:bg-[#E84B1C]/90"
                 size="lg"
+                onClick={() => setIsModalOpen(true)}
               >
-                <Link href="/appointment">Book an Appointment</Link>
+                Book an Appointment
               </Button>
               <Button
                 asChild
@@ -43,12 +43,11 @@ const HeroSection = forwardRef<HTMLDivElement, HeroSectionProps>(
                 size="lg"
                 className="border-[#E84B1C] text-[#E84B1C] hover:bg-[#E84B1C]/90 hover:text-white"
               >
-                <Link href="/services">Our Services</Link>
+                <Link href="#services">Our Services</Link>
               </Button>
             </div>
           </div>
 
-          {/* Image Container with Gradient Border */}
           <div className="relative mx-auto mt-16 max-w-5xl">
             <div className="absolute -inset-1.5 rounded-[2.5rem] bg-gradient-to-r from-[#E84B1C] to-[#008B9B] opacity-30 blur-2xl" />
             <div className="relative overflow-hidden rounded-[2.5rem] bg-white">
@@ -63,12 +62,16 @@ const HeroSection = forwardRef<HTMLDivElement, HeroSectionProps>(
             </div>
           </div>
         </div>
+
+        <AppointmentModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
       </section>
     );
   }
 );
 
-// Assigning display name to the component
 HeroSection.displayName = "HeroSection";
 
 export default HeroSection;

@@ -71,18 +71,27 @@ export default function ContactSection() {
             <div className="space-y-4">
               <div className="flex items-center space-x-3 text-gray-600">
                 <Phone className="h-5 w-5 text-[#E84B1C]" aria-hidden="true" />
-                <span>72777 32777</span>
+                <a href="tel:7277732777" className="hover:underline">
+                  72777 32777
+                </a>
               </div>
               <div className="flex items-center space-x-3 text-gray-600">
                 <Mail className="h-5 w-5 text-[#E84B1C]" aria-hidden="true" />
-                <span>windfallhospitals@gmail.com</span>
+                <a
+                  href="mailto:windfallhospitals@gmail.com"
+                  className="hover:underline"
+                >
+                  windfallhospitals@gmail.com
+                </a>
               </div>
               <div className="flex items-start space-x-3 text-gray-600">
                 <MapPin className="h-5 w-5 text-[#E84B1C]" aria-hidden="true" />
-                <span>
-                  Near YSR Statue, Road No:1, Ayyappa Society, Madhapur,
-                  Hyderabad, 500081
-                </span>
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=YSR+Statue+Y+S+Rajasekhara+Reddy+Statue,+100+Feet+Rd,+Ayyappa+Society,+Siddhi+Vinayak+Nagar,+Madhapur,+Hyderabad,+Telangana+500081"
+                  target="_blank"
+                >
+                  Get Directions
+                </a>
               </div>
             </div>
 

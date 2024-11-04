@@ -46,7 +46,7 @@ export default function ContactSection() {
 
   return (
     <section
-      className="bg-white py-16 md:py-24"
+      className="bg-[#fff0f5] py-16 md:py-24"
       aria-labelledby="contact-heading"
     >
       <div className="container px-4">
@@ -87,8 +87,9 @@ export default function ContactSection() {
               <div className="flex items-start space-x-3 text-gray-600">
                 <MapPin className="h-5 w-5 text-[#E84B1C]" aria-hidden="true" />
                 <a
-                  href="https://www.google.com/maps/dir/?api=1&destination=YSR+Statue+Y+S+Rajasekhara+Reddy+Statue,+100+Feet+Rd,+Ayyappa+Society,+Siddhi+Vinayak+Nagar,+Madhapur,+Hyderabad,+Telangana+500081"
+                  href="https://www.google.com/maps/dir/?api=1&destination=17.4506053924561,78.3916702270508"
                   target="_blank"
+                  className="hover:underline"
                 >
                   Get Directions
                 </a>
@@ -101,21 +102,7 @@ export default function ContactSection() {
               </h4>
               <div className="flex space-x-4">
                 <a
-                  href="#"
-                  className="text-gray-600 hover:text-[#E84B1C] transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="h-6 w-6" />
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-[#E84B1C] transition-colors"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="h-6 w-6" />
-                </a>
-                <a
-                  href="#"
+                  href="https://www.instagram.com/thewindfallhospitals/"
                   className="text-gray-600 hover:text-[#E84B1C] transition-colors"
                   aria-label="Instagram"
                 >
